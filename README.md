@@ -24,7 +24,7 @@
 * [Литералы](#Литералы)
 * [Константы](#Константы)
 * [Перечислимые типы](#Перечислимые-типы)
-* [Case-выражения](#Case-выражения)
+* [Case-выражения](#Case--выражения)
 * [Приватные свойства](#Приватные-свойства)
 * [Логические переменные](#Логические-переменные)
 * [Условные операторы](#Условные-операторы)
@@ -42,12 +42,12 @@
 
 Предполагается использование английского языка. Если в комментариях используется русский, то он должен быть также использован во всем проекте.
 
-**Хорошо:**
+**Желательно:**
 ```objc
 UIColor *myColor = [UIColor whiteColor];
 ```
 
-**Плохо:**
+**Нежелательно:**
 ```objc
 UIColor *myColour = [UIColor whiteColor];
 ```
@@ -100,10 +100,10 @@ UIColor *myColour = [UIColor whiteColor];
 
 ## Отступы
 
-* Отступы должны состоять из 4 пробелов. Не используйте знаки табуляции для отступов. Данные настройки можно выставить в `Xcode`->`Preferences`->`Text Editing`->`Indentation`.
+* Отступы должны состоять из 4 пробелов. Не используйте знаки табуляции для отступов. Данные настройки можно выставить в `Xcode`→`Preferences`→`Text Editing`→`Indentation`.
 * Открывающиеся операторные скобки должны стоять на той же строке, что и управляющая конструкция (`if`/`else`/`switch`/`while` и пр.), а закрываться на следующей.
 
-**Хорошо:**
+**Желательно:**
 ```objc
 if (user.isHappy) {
     //Do something
@@ -112,7 +112,7 @@ if (user.isHappy) {
 }
 ```
 
-**Плохо:**
+**Нежелательно:**
 ```objc
 if (user.isHappy)
 {
@@ -127,7 +127,7 @@ else {
 * Пользуйтесь прежде всего автоматически сгенерированными аксессорами для свойств. Но в случае необходимости ключевые слова `@synthesize` и `@dynamic` должны быть вынесены на отдельную строку.
 * Старайтесь не использовать вызовы методов, в которых параметры были выровнены по двоеточию. Впрочем, есть случаи, когда сигнатура метода содержит >= 3 двоеточий, и выравнивание параметров улучшает читаемость. Однако, пожалуйста, **НЕ** используйте выравнивание параметров в методах, принимающих блоки, так как выравнивание Xcode делает результат плохо читаемым.
 
-**Хорошо:**
+**Желательно:**
 
 ```objc
 // blocks are easily readable
@@ -138,7 +138,7 @@ else {
 }];
 ```
 
-**Плохо:**
+**Нежелательно:**
 
 ```objc
 // colon-aligning makes the block indentation hard to read
@@ -155,7 +155,8 @@ else {
 
 В местах, где они нужны, комментарии должны объяснять, **зачем** некоторый код выполняет свою логику. Любые комментарии должны быть или релевантными и актуальными, или их не должно быть вовсе.
 
-Многострочные комментарии в общем случае не нужны, так как код должен быть прозрачным и отражать суть. Комментарии же должны быть краткими, сжатыми и по делу. *Конечно, все сказанное не относится к комментариям, формирующим документацию.*
+Многострочные комментарии в общем случае не нужны, так как код должен быть прозрачным и отражать суть. Комментарии же должны быть краткими, сжатыми и по делу.
+* *Конечно, все сказанное не относится к комментариям, формирующим документацию.*
 
 ## Именование
 
@@ -163,13 +164,13 @@ else {
 
 Длинные, описывающие предназначение сущности названия приветствуются.
 
-**Хорошо:**
+**Желательно:**
 
 ```objc
 UIButton *settingsButton;
 ```
 
-**Плохо:**
+**Нежелательно:**
 
 ```objc
 UIButton *setBut;
@@ -179,13 +180,13 @@ UIButton *setBut;
 
 Константы называются согласно стилю CamelCase и содержат префикс соответствующего класса для большей ясности.
 
-**Хорошо:**
+**Желательно:**
 
 ```objc
 static NSTimeInterval const RWTTutorialViewControllerNavigationFadeAnimationDuration = 0.3;
 ```
 
-**Плохо:**
+**Нежелательно:**
 
 ```objc
 static NSTimeInterval const fadetime = 1.7;
@@ -193,13 +194,13 @@ static NSTimeInterval const fadetime = 1.7;
 
 Свойства также должны быть в CamelCase-стиле со строчной первой буквой. Используйте автосгенерированные аксессоры вместо синтезированных, если только у вас нет на то хорошей причины.
 
-**Хорошо:**
+**Желательно:**
 
 ```objc
 @property (strong, nonatomic) NSString *descriptiveVariableName;
 ```
 
-**Плохо:**
+**Нежелательно:**
 
 ```objc
 id varnm;
@@ -207,7 +208,7 @@ id varnm;
 
 ### Знаки нижнего подчеркивания
 
-При использовании свойств или ivar, всегда следует использовать обращение через `self.`. Это значит, что все свойства должны быть визуально разделены, так как они все будут начинаться с `self.`..
+При использовании свойств или ivar, всегда следует использовать обращение через `self.`. Это значит, что все свойства должны быть визуально разделены, так как они все будут начинаться с `self.`.
 
 Исключения к вышесказанному: обращения внутри инициализаторов, а также вызовы, в которых требуется избежать сторонних эффектов от вызовов аксессоров (геттеры/сеттеры).
 
@@ -221,7 +222,7 @@ id varnm;
 
 Использование слова "and" зарезервировано. Не следует его использовать для множественных параметров, например, `initWithWidth:andHeight:`.
 
-**Хорошо:**
+**Желательно:**
 ```objc
 - (void)setExampleText:(NSString *)text image:(UIImage *)image;
 - (void)sendAction:(SEL)aSelector to:(id)anObject forAllCells:(BOOL)flag;
@@ -229,7 +230,7 @@ id varnm;
 - (instancetype)initWithWidth:(CGFloat)width height:(CGFloat)height;
 ```
 
-**Плохо:**
+**Нежелательно:**
 
 ```objc
 -(void)setT:(NSString *)text i:(UIImage *)image;
@@ -245,13 +246,12 @@ id varnm;
 
 Звездочки, обозначающие указатель на некоторый типа данных, должны быть неразрывны с именем переменной, например, `NSString *text`, не `NSString* text` или `NSString * text` (последнее допустимо, если имеем дело с константами).
 
->>>>>>>
-[Приватные свойства](#private-properties) должны быть использованы вместо переменных экземпляра везде, где только можно. При использовании свойсв код становится более консистентным.
+[Приватные свойства](#Приватные-свойства) должны быть использованы вместо переменных экземпляра везде, где только можно. При использовании свойсв код становится более консистентным.
 
 Прямой доступ к переменным класса, которые лежат 'под' свойством не желателен, кроме обращений в инициализаторах (`init`, `initWithCoder:`, и др.), деструкторе (`dealloc`) и аксессорах.
 Чтобы узнать больше об обращении к аксессорам в инициализаторах и деструкторе, можно почитать [здесь](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html#//apple_ref/doc/uid/TP40004447-SW6).
 
-**Хорошо:**
+**Желательно:**
 
 ```objc
 @interface RWTTutorial : NSObject
@@ -261,7 +261,7 @@ id varnm;
 @end
 ```
 
-**Плохо:**
+**Нежелательно:**
 
 ```objc
 @interface RWTTutorial : NSObject {
@@ -274,14 +274,16 @@ id varnm;
 
 Свойства должны быть перечислены явно, они должны помогать другим программистам читать ваш код. Атрибуты свойств должны идти в следующем порядке: сначала тип ссылки (`weak`, `strong`, `copy`), затем атомарность (`nonatomic`, `atomic`), что совпадает с автоматически сгенерированными свойствами при, например, создании outlet из Interface Builder.
 
-**Хорошо:**
+Для свойств примитивных типов не нужно писать модификатор `assign`, так как он используется по умолчанию. С другой стороны, `atomic`, также используемый по умолчанию, лучше указать явно, чтобы показать, что в коде присутствует многопоточность.
+
+**Желательно:**
 
 ```objc
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (strong, nonatomic) NSString *tutorialName;
 ```
 
-**Плохо:**
+**Нежелательно:**
 
 ```objc
 @property (nonatomic, weak) IBOutlet UIView *containerView;
@@ -290,13 +292,13 @@ id varnm;
 
 Обратите внимание, что со строками необходимо всегда использовать `copy` вместо `strong`. Ведь даже если вы создаете свойство типа `NSString`, кто-нибудь может передать экземпляр `NSMutableString` и менять его без вашего ведома.
 
-**Хорошо:**
+**Желательно:**
 
 ```objc
 @property (copy, nonatomic) NSString *tutorialName;
 ```
 
-**Плохо:**
+**Нежелательно:**
 
 ```objc
 @property (strong, nonatomic) NSString *tutorialName;
@@ -308,14 +310,14 @@ id varnm;
 
 **Всегда** используйте точку, чтобы обратиться к свойству. Вызовы методов с помощью квадратных скобок используются во всех остальных случаях.
 
-**Хорошо:**
+**Желательно:**
 ```objc
 NSInteger arrayCount = [self.array count]; // self.array may be nil, so we use bracket notation
 view.backgroundColor = [UIColor orangeColor];
 [UIApplication sharedApplication].delegate;
 ```
 
-**Плохо:**
+**Нежелательно:**
 ```objc
 NSInteger arrayCount = self.array.count;
 [view setBackgroundColor:[UIColor orangeColor]];
@@ -326,7 +328,7 @@ UIApplication.sharedApplication.delegate;
 
 Литералы `NSString`, `NSDictionary`, `NSArray`, и `NSNumber` должны быть использованы каждый раз при создании неизменяемого (immutable) экземпляра соответствующего класса. Обратите особое внимание, что nil при таком создании объектов, переданный в качестве элемента содержимого, приводит к падению приложения.
 
-**Хорошо:**
+**Желательно:**
 
 ```objc
 NSArray *names = @[@"Brian", @"Matt", @"Chris", @"Alex", @"Steve", @"Paul"];
@@ -335,7 +337,7 @@ NSNumber *shouldUseLiterals = @YES;
 NSNumber *buildingStreetNumber = @10018;
 ```
 
-**Плохо:**
+**Нежелательно:**
 
 ```objc
 NSArray *names = [NSArray arrayWithObjects:@"Brian", @"Matt", @"Chris", @"Alex", @"Steve", @"Paul", nil];
@@ -348,7 +350,7 @@ NSNumber *buildingStreetNumber = [NSNumber numberWithInteger:10018];
 
 Константы предпочтительно использовать для строк и чисел, так как позволяют легко себя переиспользовать и могут быть быстро изменены без необходимости пользоваться поиском и заменой. Они должны быть объявлены с ключевым словом `static`, если только не используется макрос и конструкция `#define`.
 
-**Хорошо:**
+**Желательно:**
 
 ```objc
 static NSString * const RWTAboutViewControllerCompanyName = @"RayWenderlich.com";
@@ -356,7 +358,7 @@ static NSString * const RWTAboutViewControllerCompanyName = @"RayWenderlich.com"
 static CGFloat const RWTImageThumbnailHeight = 50.0;
 ```
 
-**Плохо:**
+**Нежелательно:**
 
 ```objc
 #define CompanyName @"RayWenderlich.com"
@@ -391,7 +393,7 @@ typedef NS_ENUM(NSInteger, RWTGlobalConstants) {
 
 Старый метод создания перечислимого типа использовать **не следует**, кроме случаев, если вы пишете CoreFoundation-код (что вряд ли :] ).
 
-**Плохо:**
+**Нежелательно:**
 
 ```objc
 enum GlobalConstants {
@@ -441,7 +443,7 @@ switch (condition) {
 
 ```
 
-Когда рассматриваются различные значения перечислимого типа, ключевое слово 'default' не обязательно, например:
+Когда рассматриваются различные значения перечислимого типа, ключевое слово 'default' лучше не указывать, чтобы при добавлении новых значений перечислимого типа IDE подсветил предупреждением о не реализованной ветке.
 
 ```objc
 RWTLeftMenuTopItemType menuType = RWTLeftMenuTopItemMain;
@@ -463,7 +465,7 @@ switch (menuType) {
 ## Приватные свойства
 
 Приватные свойства должны быть объявлены в расширении класса (class extension) в m-файле с реализацией класса. Именованные категории (такие, как `RWTPrivate` или `private`) не следует использовать, если только не расширяем функциональность другого класса.
-Анонимные категории могут быть явно открыты для тестирования, но следует соблюдать конвенцию об именовании: `<headerfile>+Private.h`.
+Анонимные категории могут быть явно открыты для тестирования, но следует соблюдать конвенцию об именовании: `<headerfile>+Private.h` или `<headerfile>+Testing.h`.
 
 **Например:**
 
@@ -481,14 +483,14 @@ switch (menuType) {
 
 Objective-C использует `YES` и `NO`.  Соответственно, `true` и `false` должны быть использованы только в CoreFoundation, C и C++-коде.  Так как `nil` соответствует `NO`, нет необходимости явно делать с ним сравнение в условных операторах. Никогда не сравнивайте ничего с константой `YES`, ведь она определена как 1, а сам тип `BOOL` содержит 8 бит.
 
-**Хорошо:**
+**Желательно:**
 
 ```objc
 if (someObject) {}
 if (![anotherObject boolValue]) {}
 ```
 
-**Плохо:**
+**Нежелательно:**
 
 ```objc
 if (someObject == nil) {}
@@ -497,25 +499,42 @@ if (isAwesome == YES) {} // Never do this.
 if (isAwesome == true) {} // Never do this.
 ```
 
-Так как сами переменные типа `BOOL` зачастую являются именами прилагательными, префикс “is” может быть опущен для свойства, но явно указан в его аксессоре, например:
+Так как сами переменные типа `BOOL` зачастую являются именами прилагательными, префикс “is” может быть опущен для свойств, но явно указан в его аксессоре, например:
 
 ```objc
 @property (assign, getter=isEditable) BOOL editable;
 ```
 Взято из [Cocoa Naming Guidelines](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingIvarsAndTypes.html#//apple_ref/doc/uid/20001284-BAJGIIJE).
 
+Однако в большинстве случаев префиксы `is`, `are` и другие должны присутствовать, так как, во-первых, это явно указывает принадлежность переменной к логическому типу, во-вторых, не у всех слов есть -able и другие суффиксы.
+
+Многие условия могут быть переписаны в более простом виде. Следует упрощать, например, выражения, использующие двойное отрицание:
+```objc
+if (!(recordsCount<>0)) { ... // should be simplified
+}
+```
+
+Переменные типа `NSNumber *` нужно не забывать приводить к типу `NSInteger`:
+```objc
+NSNumber *a = @(0);
+if ([numberOfFucksGiven integerValue] == 0) {
+  // ...
+}
+```
+
+
 ## Условные операторы
 
 Тело условного оператора всегда должно быть помещено в операторные скобки, и первый же оператор в теле должен быть на новой строке после условия. Пренебрежение этими правилами может привести к ошибкам разного рода, например, [таким](http://programmers.stackexchange.com/a/16530).
 
-**Хорошо:**
+**Желательно:**
 ```objc
 if (!error) {
   return success;
 }
 ```
 
-**Плохо:**
+**Нежелательно:**
 ```objc
 if (!error)
   return success;
@@ -527,6 +546,23 @@ if (!error)
 if (!error) return success;
 ```
 
+Условие не должно быть большим, а если оно содержит много частей, то нужно выносить их в логические переменные. В результате условие должно читаться легко:
+**Желательно:**
+```objc
+BOOL isNetworkOk = isWifiReachable || (isEthernetConnected && isEthernetConnectionEstablished);
+BOOL hasGame = [self.games count] > 0;
+if (isNetworkOk && hasGame) {
+  [self playWithFriends];
+}
+```
+
+**Нежелательно:**
+```objc
+if ((isWifiReachable || (isEthernetConnected && isEthernetConnectionEstablished)) && ([self.games count] > 0)) {
+  [self playWithFriends];
+}
+```
+
 ### Тернарный оператор
 
 Тернарный оператор `?:` должен быть использован, когда это повышает читаемость кода. Используйте его, когда он упрощает проверку с одним условием, если структура сложнее, имеет смысл использовать `if`.
@@ -534,7 +570,7 @@ if (!error) return success;
 
 Переменные не логического типа должны быть с чем-нибудь сравнены, в этом случае используйте скобки для повышения читаемости. Если используется булева переменная, скобки не обязательны.
 
-**Хорошо:**
+**Желательно:**
 ```objc
 NSInteger value = 5;
 result = (value != 0) ? x : y;
@@ -543,7 +579,7 @@ BOOL isHorizontal = YES;
 result = isHorizontal ? x : y;
 ```
 
-**Плохо:**
+**Нежелательно:**
 ```objc
 result = a > b ? x = c > d ? c : d : y;
 ```
@@ -572,7 +608,7 @@ result = a > b ? x = c > d ? c : d : y;
 @end
 ```
 
-Больше информации оь 'instancetype' можно почерпнуть на [NSHipster.com](http://nshipster.com/instancetype/).
+Больше информации об 'instancetype' можно почерпнуть на [NSHipster.com](http://nshipster.com/instancetype/).
 
 ## Методы CGRect
 
@@ -581,7 +617,7 @@ result = a > b ? x = c > d ? c : d : y;
 
 > All functions described in this reference that take CGRect data structures as inputs implicitly standardize those rectangles before calculating their results. For this reason, your applications should avoid directly reading and writing the data stored in the CGRect data structure. Instead, use the functions described here to manipulate rectangles and to retrieve their characteristics.
 
-**Хорошо:**
+**Желательно:**
 
 ```objc
 CGRect frame = self.view.frame;
@@ -593,7 +629,7 @@ CGFloat height = CGRectGetHeight(frame);
 CGRect frame = CGRectMake(0.0, 0.0, width, height);
 ```
 
-**Плохо:**
+**Нежелательно:**
 
 ```objc
 CGRect frame = self.view.frame;
@@ -609,7 +645,7 @@ CGRect frame = (CGRect){ .origin = CGPointZero, .size = frame.size };
 
 При использовании множественных условных операторов важно следить за тем, чтобы код не был сильно вложенным. Правильным подходом является инвертирование условий, там, где это необходимо, для того, чтобы сразу выйти из метода или цикла.
 
-**Хорошо:**
+**Желательно:**
 
 ```objc
 - (void)someMethod {
@@ -635,7 +671,7 @@ CGRect frame = (CGRect){ .origin = CGPointZero, .size = frame.size };
 
 Когда метод возвращает параметр-ошибку по ссылке, необходимо переключаться прежде всего на возвращаемое значение, а не на этот параметр:
 
-**Хорошо:**
+**Желательно:**
 ```objc
 NSError *error;
 if (![self trySomethingWithError:&error]) {
@@ -643,7 +679,7 @@ if (![self trySomethingWithError:&error]) {
 }
 ```
 
-**Плохо:**
+**Нежелательно:**
 ```objc
 NSError *error;
 [self trySomethingWithError:&error];
