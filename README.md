@@ -658,7 +658,7 @@ CGRect frame = (CGRect){ .origin = CGPointZero, .size = frame.size };
 }
 ```
 
-**Not Preferred:**
+**Нежелательно:**
 
 ```objc
 - (void)someMethod {
