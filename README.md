@@ -177,7 +177,7 @@ UIButton *setBut;
 **Желательно:**
 
 ```objc
-static NSTimeInterval const RWTTutorialViewControllerNavigationFadeAnimationDuration = 0.3;
+static NSTimeInterval const TutorialViewControllerNavigationFadeAnimationDuration = 0.3;
 ```
 
 **Нежелательно:**
@@ -252,7 +252,7 @@ id varnm;
 **Желательно:**
 
 ```objc
-@interface RWTTutorial : NSObject
+@interface Tutorial : NSObject
 
 @property (strong, nonatomic) NSString *tutorialName;
 
@@ -262,7 +262,7 @@ id varnm;
 **Нежелательно:**
 
 ```objc
-@interface RWTTutorial : NSObject {
+@interface Tutorial : NSObject {
   NSString *tutorialName;
 }
 ```
@@ -368,9 +368,9 @@ NSNumber *buildingStreetNumber = [NSNumber numberWithInteger:10018];
 **Желательно:**
 
 ```objc
-static NSString * const RWTAboutViewControllerCompanyName = @"RayWenderlich.com";
+static NSString * const AboutViewControllerCompanyName = @"RayWenderlich.com";
 
-static CGFloat const RWTImageThumbnailHeight = 50.0;
+static CGFloat const ImageThumbnailHeight = 50.0;
 ```
 
 **Нежелательно:**
@@ -388,21 +388,21 @@ static CGFloat const RWTImageThumbnailHeight = 50.0;
 **Например:**
 
 ```objc
-typedef NS_ENUM(NSInteger, RWTLeftMenuTopItemType) {
-  RWTLeftMenuTopItemMain,
-  RWTLeftMenuTopItemShows,
-  RWTLeftMenuTopItemSchedule
+typedef NS_ENUM(NSInteger, LeftMenuTopItemType) {
+  LeftMenuTopItemMain,
+  LeftMenuTopItemShows,
+  LeftMenuTopItemSchedule
 };
 ```
 
 Также можно явно указать значение каждого из вариантов:
 
 ```objc
-typedef NS_ENUM(NSInteger, RWTGlobalConstants) {
-  RWTPinSizeMin = 1,
-  RWTPinSizeMax = 5,
-  RWTPinCountMin = 100,
-  RWTPinCountMax = 500,
+typedef NS_ENUM(NSInteger, GlobalConstants) {
+  PinSizeMin = 1,
+  PinSizeMax = 5,
+  PinCountMin = 100,
+  PinCountMax = 500,
 };
 ```
 
@@ -461,16 +461,16 @@ switch (condition) {
 Когда рассматриваются различные значения перечислимого типа, ключевое слово `default` лучше не указывать, чтобы при добавлении новых значений перечислимого типа IDE подсветил предупреждением о не реализованной ветке.
 
 ```objc
-RWTLeftMenuTopItemType menuType = RWTLeftMenuTopItemMain;
+LeftMenuTopItemType menuType = LeftMenuTopItemMain;
 
 switch (menuType) {
-  case RWTLeftMenuTopItemMain:
+  case LeftMenuTopItemMain:
     // ...
     break;
-  case RWTLeftMenuTopItemShows:
+  case LeftMenuTopItemShows:
     // ...
     break;
-  case RWTLeftMenuTopItemSchedule:
+  case LeftMenuTopItemSchedule:
     // ...
     break;
 }
@@ -479,13 +479,13 @@ switch (menuType) {
 
 ## Приватные свойства
 
-Приватные свойства должны быть объявлены в расширении класса (class extension) в m-файле с реализацией класса. Именованные категории (такие, как `RWTPrivate` или `private`) не следует использовать, если только не расширяем функциональность другого класса.
+Приватные свойства должны быть объявлены в расширении класса (class extension) в m-файле с реализацией класса. Именованные категории (такие, как `Private` или `private`) не следует использовать, если только не расширяем функциональность другого класса.
 Анонимные категории могут быть явно открыты для тестирования, но следует соблюдать конвенцию об именовании: `<headerfile>+Private.h` или `<headerfile>+Testing.h`.
 
 **Например:**
 
 ```objc
-@interface RWTDetailViewController ()
+@interface DetailViewController ()
 
 @property (strong, nonatomic) GADBannerView *googleAdView;
 @property (strong, nonatomic) ADBannerView *iAdView;
@@ -635,7 +635,7 @@ result = a > b ? x = c > d ? c : d : y;
 
 ```objc
 @interface Airplane
-+ (instancetype)airplaneWithType:(RWTAirplaneType)type;
++ (instancetype)airplaneWithType:(AirplaneType)type;
 @end
 ```
 
