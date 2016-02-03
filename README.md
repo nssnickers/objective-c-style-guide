@@ -35,6 +35,7 @@
 * [Обработка ошибок](#Обработка-ошибок)
 * [Синглтоны](#Синглтоны)
 * [Переносы строк](#Переносы-строк)
+* [Именование ресурсов](#Именование-ресурсов)
 
 
 ## Язык
@@ -768,3 +769,23 @@ self.productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:pro
 self.productsRequest = [[SKProductsRequest alloc]
   initWithProductIdentifiers:productIdentifiers];
 ```
+
+## Именование ресурсов
+
+* Иконки:
+```
+   ic_<имя_иконки>
+```
+Например, "ic_star".
+
+* Элементы интерфейса
+```
+   <тип контрола>_<имя/цвет>_<state>
+```
+Например, "btn_login_normal" или "btn_green_pressed"
+
+* Фоны
+```
+   bg_<имя>
+```
+Например, "bg_wood" или "bg_login".
