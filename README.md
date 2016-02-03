@@ -677,7 +677,7 @@ CGFloat height = CGRectGetHeight(frame);
 CGRect frame = CGRectMake(0.0, 0.0, width, height);
 ```
 
-**Нежелательно:**
+**Допустимо:**
 
 ```objc
 CGRect frame = self.view.frame;
@@ -687,6 +687,19 @@ CGFloat y = frame.origin.y;
 CGFloat width = frame.size.width;
 CGFloat height = frame.size.height;
 CGRect frame = (CGRect){ .origin = CGPointZero, .size = frame.size };
+```
+
+Крайне рекомендуется к использованию библиотека [FrameAccessor](https://github.com/AlexDenisov/FrameAccessor), значительно упрощающая работу с фреймами.
+
+```objc
+view.x = xPosition;
+view.width = calculatedWidth;
+
+//   instead of:
+// CGRect newFrame = view.frame;
+// newFrame.origin.x = 15.;
+// newFrame.size.width = 167.;
+// view.frame = newFrame;
 ```
 
 ## Вложенность кода
