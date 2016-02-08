@@ -788,21 +788,21 @@ self.productsRequest = [[SKProductsRequest alloc]
 
 * Иконки:
 ```
-   ic_<имя_иконки>
+   ic<ИмяИконки>
 ```
-Например, "ic_star".
+Например, "icStar".
 
 * Элементы интерфейса
 ```
-   <тип контрола>_<имя/цвет>_<state>
+   <типКонтрола><Имя/Цвет><State>
 ```
-Например, "btn_login_normal" или "btn_green_pressed"
+Например, "btnLoginNormal" или "btnGreenPressed"
 
 * Фоны
 ```
-   bg_<имя>
+   bg<Имя>
 ```
-Например, "bg_wood" или "bg_login".
+Например, "bgWood" или "bgLogin".
 
 ## Однотипное именование понятий
 
